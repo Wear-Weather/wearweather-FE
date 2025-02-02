@@ -5,6 +5,7 @@ import ReactQueryProvider from '@/lib/ReactQueryProvider';
 import ScrollToTop from '@/components/common/ScrollToTop';
 import NetworkBoundary from '@/components/common/NetworkBoundary';
 import { spoqaHanSansNeo } from '@/config/fonts';
+import AuthRefresher from '@/components/login/AuthRefresher';
 
 export const metadata: Metadata = {
   title: '룩엣더웨더 | Look At The Weather',
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div
               className={`max-w-md m-auto h-screen bg-background-white flex flex-col overflow-y-auto scrollbar-hide ${spoqaHanSansNeo.className}`}
             >
+              <AuthRefresher />
               <ScrollToTop />
               <NetworkBoundary>{children}</NetworkBoundary>
               <ToastProvider />
